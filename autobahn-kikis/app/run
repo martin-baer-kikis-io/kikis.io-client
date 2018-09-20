@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# below only installed to show how to add Python packages into the container
+# pip install --no-cache -r requirements.txt
+
+python -u my_set_app.py --debug
+#python -u my_get_app.py --debug
+
+#python -u test.py --debug
+#python -u client_kikis.py --debug
+
+#python -u client_tx.py
+#python -u client_longop.py --debug
+#python -u client_aio.py

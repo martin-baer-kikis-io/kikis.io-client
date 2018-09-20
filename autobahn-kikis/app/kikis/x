@@ -1,0 +1,16 @@
+
+    #
+    # now actually run a WAMP client using our session class ClientSession
+    #
+
+    runner = ApplicationRunner(url=url, realm=realm, extra=navigation_dict )
+    runner.run(ClientSession, auto_reconnect=True)
+
+    res = runner.extra[u'result']
+
+    print('-------------------------------------------------------------------------------------')
+    print('get result:  ', res )
+    print('-------------------------------------------------------------------------------------')
+
+    return res
+    

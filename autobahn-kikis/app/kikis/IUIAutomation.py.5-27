@@ -1,0 +1,75 @@
+"""
+----------------------------------------------------------------------------------
+
+    IUIAutomation.py
+
+        runs the WAMP Client
+
+----------------------------------------------------------------------------------
+"""
+import os
+import argparse
+import six
+import txaio
+
+from autobahn.twisted.util import sleep
+from autobahn.wamp.types import RegisterOptions
+from autobahn.twisted.wamp import ApplicationSession, ApplicationRunner
+from autobahn.wamp.exception import ApplicationError
+
+from kikis.ClientSessionWrapper import ClientSession
+
+
+def get( args, nvdict ):
+
+    # Crossbar.io connection configuration
+    # url = os.environ.get('CBURL', u'ws://localhost:8080/ws')
+    # start logging
+
+    #print('----------------------------')
+    #print (u'url: ', args.url)
+    #print (u'realm: ', args.realm)
+    #print (u'Relation1: ', nvdict.Relation1)
+    #print (u'Lanmark1 : ', nvdict.Landmark1)
+    #print('----------------------------')
+
+
+    #url   = os.environ.get('CBURL', u'ws://masterdns.kikis.local:8080/ws')
+    url   = os.environ.get('CBURL', args.url ) 
+
+    #realm = os.environ.get('CBREALM', u'realm1')
+    realm = os.environ.get('CBREALM', args.realm )
+
+    # now actually run a WAMP client using our session class ClientSession
+    runner = ApplicationRunner(url=url, realm=realm, extra=nvdict )
+    res = runner.run(ClientSession, auto_reconnect=True)
+    print('----------------------------')
+    print('runner returns: ', res)
+    print('----------------------------')
+
+
+def set( args, message ):
+
+    # Crossbar.io connection configuration
+    # url = os.environ.get('CBURL', u'ws://localhost:8080/ws')
+
+    #url   = os.environ.get('CBURL', u'ws://masterdns.kikis.local:8080/ws')
+    url   = os.environ.get('CBURL', args.url )
+
+    #realm = os.environ.get('CBREALM', u'realm1')
+    realm = os.environ.get('CBREALM', args.realm )
+
+    # dictionary argument to set  message
+    extra = {
+        u'method':  set, 
+        u'message': message
+    }
+
+    
+    # now actually run a WAMP client using our session class ClientSession
+    runner = ApplicationRunner(url=url, realm=realm, extra=extra)
+    res = runner.run(ClientSession, auto_reconnect=True)
+    #print('----------------------------')
+    #print(' res =', res)
+    #print('----------------------------')
+

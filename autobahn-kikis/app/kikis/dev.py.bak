@@ -1,0 +1,100 @@
+import os
+import argparse
+import six
+import txaio
+
+from twisted.internet import reactor
+from twisted.internet.error import ReactorNotRunning
+from twisted.internet.defer import inlineCallbacks
+
+from autobahn.twisted.util import sleep
+from autobahn.wamp.types import RegisterOptions
+from autobahn.twisted.wamp import ApplicationSession, ApplicationRunner
+from autobahn.wamp.exception import ApplicationError
+
+
+class ClientSession(ApplicationSession):
+    """
+    Our WAMP session class .. place your app code here!
+    """
+
+    def onConnect(self):
+        self.log.info("Local PY Client connected: {klass}", klass=ApplicationSession)
+        self.join(self.config.realm, [u'anonymous'])
+
+    def onChallenge(self, challenge):
+        self.log.info("Challenge for method {authmethod} received", authmethod=challenge.method)
+        raise Exception("We haven't asked for authentication!")
+
+    @inlineCallbacks
+    def onJoin(self, details):
+
+        self.log.info("Local PY Connected:  {details}", details=details)
+
+        self._ident = details.authid
+        self._type  = u'Python'
+
+        self.log.info("Component ID is  {ident}", ident=self._ident)
+        self.log.info("Component type is  {type}", type=self._type)
+
+        print('xxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+        self.log.info("extra {extra}", extra=self.config.extra)
+        print('xxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+
+        try:
+            #res = yield self.call(u'com.example._exec', 'wamp::Payload:', 1 )
+            res = yield self.call(u'com.example.exec', 'AddAutomationEventHandler', "message" )
+            print('----------------------------')
+            print('this is not right =', res)
+            print(' res =', res)
+            print('----------------------------')
+
+        except ApplicationError as e:
+            ## ignore errors due to the frontend not yet having
+            ## registered the procedure we would like to call
+            if e.error != 'wamp.error.no_such_procedure':
+                raise e
+
+        try:
+            res = yield self.call(u'com.example.exec', 'AddFocusChangedEventHandler', "message" )
+            print('----------------------------')
+            print('this is not right =', res)
+            print(' res =', res)
+            print('----------------------------')
+
+        except ApplicationError as e:
+            ## ignore errors due to the frontend not yet having
+            ## registered the procedure we would like to call
+            if e.error != 'wamp.error.no_such_procedure':
+                raise e
+
+            #self.log.info("local py exec result: {res}",
+            #result=res[0])
+            #self.log.info("local py from component {id} ({type})", id=res, type=res)
+
+            #res = yield self.call(u'com.example.long_op', 777, 23)
+            #print('----------------------------')
+            #print(' long_op res =', res[0])
+            #print('----------------------------')
+
+            #self.log.info("local py exec result: {result}",
+            #result=res[0])
+            #self.log.info("local py from component {id} ({type})", id=res[1], type=res[2])
+
+        except ApplicationError as e:
+            ## ignore errors due to the frontend not yet having
+            ## registered the procedure we would like to call
+            if e.error != 'wamp.error.no_such_procedure':
+                raise e
+
+    def onLeave(self, details):
+        self.log.info("local py Router session closed ({details})", details=details)
+        self.disconnect()
+
+    def onDisconnect(self):
+        self.log.info("Router connection closed")
+        try:
+            reactor.stop()
+        except ReactorNotRunning:
+            pass
+

@@ -1,0 +1,73 @@
+How found:	Selected from tree...
+Name:	"Taskbar"
+ControlType:	UIA_PaneControlTypeId (0xC371)
+LocalizedControlType:	"pane"
+BoundingRectangle:	{l:0 t:920 r:1280 b:960}
+IsEnabled:	true
+IsOffscreen:	false
+IsKeyboardFocusable:	true
+HasKeyboardFocus:	false
+AccessKey:	""
+ProcessId:	6040
+RuntimeId:	[2A.100AC]
+FrameworkId:	"Win32"
+ClassName:	"Shell_TrayWnd"
+NativeWindowHandle:	0x100AC
+ProviderDescription:	"[pid:4064,providerId:0x100AC Main:Nested [pid:6040,providerId:0x100AC Annotation(parent link):Microsoft: Annotation Proxy (unmanaged:uiautomationcore.dll); Main:Microsoft: MSAA Proxy (unmanaged:uiautomationcore.dll)]; Hwnd(parent link):Microsoft: HWND Proxy (unmanaged:uiautomationcore.dll)]"
+IsPassword:	false
+HelpText:	""
+LegacyIAccessible.ChildId:	0
+LegacyIAccessible.DefaultAction:	""
+LegacyIAccessible.Description:	""
+LegacyIAccessible.Help:	""
+LegacyIAccessible.KeyboardShortcut:	""
+LegacyIAccessible.Name:	"Taskbar"
+LegacyIAccessible.Role:	client (0xA)
+LegacyIAccessible.State:	focusable (0x100000)
+LegacyIAccessible.Value:	""
+IsAnnotationPatternAvailable:	false
+IsDragPatternAvailable:	false
+IsDockPatternAvailable:	false
+IsDropTargetPatternAvailable:	false
+IsExpandCollapsePatternAvailable:	false
+IsGridItemPatternAvailable:	false
+IsGridPatternAvailable:	false
+IsInvokePatternAvailable:	false
+IsItemContainerPatternAvailable:	false
+IsLegacyIAccessiblePatternAvailable:	true
+IsMultipleViewPatternAvailable:	false
+IsObjectModelPatternAvailable:	false
+IsRangeValuePatternAvailable:	false
+IsScrollItemPatternAvailable:	false
+IsScrollPatternAvailable:	false
+IsSelectionItemPatternAvailable:	false
+IsSelectionPatternAvailable:	false
+IsSpreadsheetItemPatternAvailable:	false
+IsSpreadsheetPatternAvailable:	false
+IsStylesPatternAvailable:	false
+IsSynchronizedInputPatternAvailable:	false
+IsTableItemPatternAvailable:	false
+IsTablePatternAvailable:	false
+IsTextChildPatternAvailable:	false
+IsTextEditPatternAvailable:	false
+IsTextPatternAvailable:	false
+IsTextPattern2Available:	false
+IsTogglePatternAvailable:	false
+IsTransformPatternAvailable:	false
+IsTransform2PatternAvailable:	false
+IsValuePatternAvailable:	false
+IsVirtualizedItemPatternAvailable:	false
+IsWindowPatternAvailable:	false
+IsCustomNavigationPatternAvailable:	false
+IsSelectionPattern2Available:	false
+FirstChild:	"Start" button
+LastChild:	"" pane
+Next:	"Microsoft Visual Studio" dialog
+Previous:	"Inspect  (HWND: 0x00090614) UIAccess" window
+Other Props:	Object has no additional properties
+Children:	"Start" button
+	"" pane
+	"Running applications" tool bar
+	"" pane
+Ancestors:	"Desktop 1" pane
+	[ No Parent ]

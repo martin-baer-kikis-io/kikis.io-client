@@ -1,0 +1,22 @@
+b'HTTP/1.1 101 Switching Protocols\r\nServer: Crossbar\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Protocol: wamp.2.cbor.batched\r\nSec-WebSocket-Accept: Td8vK2B4XGBzKNrv5j/HK3yi+14=\r\n\r\n'
+
+
+2018-05-07T15:29:57+0000 received HTTP status line in opening handshake : HTTP/1.1 101 Switching Protocols
+2018-05-07T15:29:57+0000 received HTTP headers in opening handshake : {'server': 'Crossbar', 'upgrade': 'WebSocket', 'connection': 'Upgrade', 'sec-websocket-protocol': 'wamp.2.cbor.batched', 'sec-websocket-accept': 'Td8vK2B4XGBzKNrv5j/HK3yi+14='}
+2018-05-07T15:29:57+0000 openHandshakeTimeoutCall.cancel
+2018-05-07T15:29:57+0000 Local PY Client connected: <class 'autobahn.twisted.wamp.ApplicationSession'>
+2018-05-07T15:29:57+0000 Local PY Connected:  SessionDetails(realm=<realm1>, session=7619475946455666, authid=<9YP6-AE4G-WQXK-MQMW-A9WU-QAFA>, authrole=<anonymous>, authmethod=anonymous, authprovider=static, authextra=None, resumed=None, resumable=None, resume_token=None)
+2018-05-07T15:29:57+0000 Component ID is  9YP6-AE4G-WQXK-MQMW-A9WU-QAFA
+2018-05-07T15:29:57+0000 Component type is  Python
+2018-05-07T15:29:58+0000 ----------------------------
+2018-05-07T15:29:58+0000  res = CallResult(results=('_AddAutomationEventHandler', 'message'), kwresults={}, enc_algo=None)
+2018-05-07T15:29:58+0000 ----------------------------
+2018-05-07T15:29:58+0000 ----------------------------
+2018-05-07T15:29:58+0000  res = CallResult(results=('_AddFocusChangedEventHandler', 'message'), kwresults={}, enc_algo=None)
+2018-05-07T15:29:58+0000 ----------------------------
+2018-05-07T15:30:07+0000 Auto ping/pong: sending ping auto-ping/pong
+2018-05-07T15:30:07+0000 Expecting ping in 5.0 seconds for auto-ping/pong
+2018-05-07T15:30:07+0000 Auto ping/pong: received pending pong for auto-ping/pong
+2018-05-07T15:30:07+0000 WebSocketProtocol.onPong(payload=<4 bytes>)
+
+

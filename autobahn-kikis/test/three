@@ -1,0 +1,71 @@
+How found:	Selected from tree...
+Name:	"Vim - 2 running windows"
+ControlType:	UIA_MenuItemControlTypeId (0xC35B)
+LocalizedControlType:	"menu item"
+BoundingRectangle:	{l:444 t:920 r:493 b:960}
+IsEnabled:	true
+IsOffscreen:	false
+IsKeyboardFocusable:	false
+HasKeyboardFocus:	false
+AccessKey:	""
+ProcessId:	6040
+RuntimeId:	[2A.200EE.4.80000001.200EE.FFFFFFFC.3]
+AutomationId:	"{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\Vim\vim81\vim.exe"
+ProviderDescription:	"[pid:6040,providerId:0x0 Annotation:Microsoft: Annotation Proxy (unmanaged:uiautomationcore.dll); Main(parent link):Microsoft: MSAA Proxy (unmanaged:uiautomationcore.dll)]"
+IsPassword:	false
+ItemStatus:	""
+HelpText:	""
+ExpandCollapse.ExpandCollapseState:	LeafNode (3)
+LegacyIAccessible.ChildId:	3
+LegacyIAccessible.DefaultAction:	"Open"
+LegacyIAccessible.Help:	""
+LegacyIAccessible.KeyboardShortcut:	""
+LegacyIAccessible.Name:	"Vim - 2 running windows"
+LegacyIAccessible.Role:	menu button (0x39)
+LegacyIAccessible.State:	has popup (0x40000000)
+LegacyIAccessible.Value:	""
+IsAnnotationPatternAvailable:	false
+IsDragPatternAvailable:	false
+IsDockPatternAvailable:	false
+IsDropTargetPatternAvailable:	false
+IsExpandCollapsePatternAvailable:	true
+IsGridItemPatternAvailable:	false
+IsGridPatternAvailable:	false
+IsInvokePatternAvailable:	true
+IsItemContainerPatternAvailable:	false
+IsLegacyIAccessiblePatternAvailable:	true
+IsMultipleViewPatternAvailable:	false
+IsObjectModelPatternAvailable:	false
+IsRangeValuePatternAvailable:	false
+IsScrollItemPatternAvailable:	false
+IsScrollPatternAvailable:	false
+IsSelectionItemPatternAvailable:	false
+IsSelectionPatternAvailable:	false
+IsSpreadsheetItemPatternAvailable:	false
+IsSpreadsheetPatternAvailable:	false
+IsStylesPatternAvailable:	false
+IsSynchronizedInputPatternAvailable:	false
+IsTableItemPatternAvailable:	false
+IsTablePatternAvailable:	false
+IsTextChildPatternAvailable:	false
+IsTextEditPatternAvailable:	false
+IsTextPatternAvailable:	false
+IsTextPattern2Available:	false
+IsTogglePatternAvailable:	false
+IsTransformPatternAvailable:	false
+IsTransform2PatternAvailable:	false
+IsValuePatternAvailable:	false
+IsVirtualizedItemPatternAvailable:	false
+IsWindowPatternAvailable:	false
+IsCustomNavigationPatternAvailable:	false
+IsSelectionPattern2Available:	false
+FirstChild:	[null]
+LastChild:	[null]
+Next:	"File Explorer - 1 running window" button
+Previous:	"inspect - Shortcut - 1 running window" button
+Other Props:	Object has no additional properties
+Children:	Container has no children
+Ancestors:	"Running applications" tool bar
+	"Taskbar" pane
+	"Desktop 1" pane
+	[ No Parent ]

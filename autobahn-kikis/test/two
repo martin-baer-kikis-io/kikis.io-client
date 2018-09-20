@@ -1,0 +1,76 @@
+How found:	Selected from tree...
+Name:	"Running applications"
+ControlType:	UIA_ToolBarControlTypeId (0xC365)
+LocalizedControlType:	"tool bar"
+BoundingRectangle:	{l:392 t:920 r:1091 b:960}
+IsEnabled:	true
+IsOffscreen:	false
+IsKeyboardFocusable:	true
+HasKeyboardFocus:	false
+AccessKey:	""
+ProcessId:	6040
+RuntimeId:	[2A.200EE]
+FrameworkId:	"Win32"
+ClassName:	"MSTaskListWClass"
+NativeWindowHandle:	0x200EE
+ProviderDescription:	"[pid:4064,providerId:0x200EE Main:Nested [pid:6040,providerId:0x200EE Annotation(parent link):Microsoft: Annotation Proxy (unmanaged:uiautomationcore.dll); Main:Microsoft: MSAA Proxy (unmanaged:uiautomationcore.dll)]; Hwnd(parent link):Microsoft: HWND Proxy (unmanaged:uiautomationcore.dll)]"
+IsPassword:	false
+HelpText:	""
+LegacyIAccessible.ChildId:	0
+LegacyIAccessible.DefaultAction:	""
+LegacyIAccessible.Help:	""
+LegacyIAccessible.KeyboardShortcut:	""
+LegacyIAccessible.Name:	"Running applications"
+LegacyIAccessible.Role:	tool bar (0x16)
+LegacyIAccessible.State:	focusable (0x100000)
+LegacyIAccessible.Value:	""
+IsAnnotationPatternAvailable:	false
+IsDragPatternAvailable:	false
+IsDockPatternAvailable:	false
+IsDropTargetPatternAvailable:	false
+IsExpandCollapsePatternAvailable:	false
+IsGridItemPatternAvailable:	false
+IsGridPatternAvailable:	false
+IsInvokePatternAvailable:	false
+IsItemContainerPatternAvailable:	false
+IsLegacyIAccessiblePatternAvailable:	true
+IsMultipleViewPatternAvailable:	false
+IsObjectModelPatternAvailable:	false
+IsRangeValuePatternAvailable:	false
+IsScrollItemPatternAvailable:	false
+IsScrollPatternAvailable:	false
+IsSelectionItemPatternAvailable:	false
+IsSelectionPatternAvailable:	false
+IsSpreadsheetItemPatternAvailable:	false
+IsSpreadsheetPatternAvailable:	false
+IsStylesPatternAvailable:	false
+IsSynchronizedInputPatternAvailable:	false
+IsTableItemPatternAvailable:	false
+IsTablePatternAvailable:	false
+IsTextChildPatternAvailable:	false
+IsTextEditPatternAvailable:	false
+IsTextPatternAvailable:	false
+IsTextPattern2Available:	false
+IsTogglePatternAvailable:	false
+IsTransformPatternAvailable:	false
+IsTransform2PatternAvailable:	false
+IsValuePatternAvailable:	false
+IsVirtualizedItemPatternAvailable:	false
+IsWindowPatternAvailable:	false
+IsCustomNavigationPatternAvailable:	false
+IsSelectionPattern2Available:	false
+FirstChild:	"inspect - Shortcut - 1 running window" button
+LastChild:	"Developer Command Prompt for VS 2017 - 1 running window" button
+Next:	"" pane
+Previous:	"" pane
+Other Props:	Object has no additional properties
+Children:	"inspect - Shortcut - 1 running window" button
+	"Vim - 2 running windows" menu item
+	"File Explorer - 1 running window" button
+	"Google Chrome" button
+	"Visual Studio 2017 - 1 running window" button
+	"Notepad++ - 1 running window" button
+	"Developer Command Prompt for VS 2017 - 1 running window" button
+Ancestors:	"Taskbar" pane
+	"Desktop 1" pane
+	[ No Parent ]
