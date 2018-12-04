@@ -8,21 +8,25 @@ RUNTIME INSTALLATION.
 
 1 Start crossbar
 
-    Open a terminal for the crossbar server and change directory to the crossbar-starter
-    directory.  Type:  make start
+    Open a terminal for the crossbar server and change directory to the 
+    crossbar-starter/crossbar directory.  
+
+        Type:  make start
 
     The crossbar "logo" should appear along with logging output from the server.
 
 
-2.  Start the 'callee' on the windows box
+2 Start the 'callee' aplicataion on the windows box.
 
-    Login to the Windows 10 host (PIN: 620560).
+    Login to the Windows10 host (PW: public99).
 
     Open a Developer's command prompt
-    Run: DevSetup.bat - this may not really be needed...
+
+        Run: DevSetup.bat - this may not really be needed...
 
     Change directory to Documents\kikis-cpp\SRC\Release
-    Type: callee.exe
+
+        Type: callee.exe
 
 
 3 Run the autobahn-kikis application; back to the linux host
@@ -35,10 +39,12 @@ RUNTIME INSTALLATION.
     to run Python RPA scripts.  The Python code will be in the "app"
     subdirectory.
 
-4.  Run the 'caller' on the Linux box; this will run the Python scripts found in 'app'.
+
+4 Run the 'caller' on the Linux box; this will run the Python scripts found in 'app'.
 
     Change directory to the autobahn-kikis directory.
-    Type:  make run
+
+        Type:  make run
 
     That will run the Python script in the 'apps/run' file
 
@@ -49,7 +55,7 @@ RUNTIME INSTALLATION.
                    Building the Caller and Callee
 
 
-1.  Buillding the Caller
+1 Buillding the Caller
 
     The Caller is the Linux/Python side of the design.  The caller calls the callee.
     There is no build instructions to the Caller, since these are Python apps that are
@@ -60,7 +66,7 @@ RUNTIME INSTALLATION.
 
 
 
-2.  Building the Callee
+2 Building the Callee
 
     The callee is the C++ code on the windows host.  It provides a set of remote proceedures
     and registers them with crossbar so that the caller can use them to make remote proceedure
@@ -90,7 +96,7 @@ RUNTIME INSTALLATION.
  
 
     
-3.  Changing the Callee Build
+3 Changing the Callee Build
 
     The build for VS is started with cmake.  If you want to change the callee build, you
     will need to change the CmakeList file in the directories: 'kikis-cpp' and 'kikis-cpp\SRC'.
