@@ -1,11 +1,14 @@
 
 import os
+import sys
 import argparse
 import six
 import txaio
 
 #from kikis.Constants import *
 from kikis.IUIAutomation import get
+
+INPUT_ARRAY_SIZE = 16
 
 #----------------------------------------------------------------------------------
 
@@ -63,31 +66,39 @@ if __name__ == '__main__':
 
 #----------------------------------------------------------------------------------
 
-    # dictionary argument to 'get()'
+    # list argument to 'get()'
 
-    # hop to the vim entry
-    vs_dict = {
-        u'0': u'com.kikis.get',
-        u'1': u'UIA_NameProperty',
-        u'2': u'Taskbar',
-        u'3': u'UIA_NameProperty',
-        u'4': u'Running applications',
-        u'5': u'UIA_NameProperty',
-        u'6': u'Visual Studio 2017 - 1 running window',
-        u'7': u'get',
-        u'8': u'UIA_IsKeyboardFocusableProperty'
-    }
-        #u'8': u'UIA_IsEnabledProperty'
-        #u'8': u'UIA_IsEnabledProperty'
-        #u'8': u'UIA_IsKeyboardFocusableProperty'
-        #u'8': u'UIA_HasKeyboardFocusProperty'
-        #u'8': u'UIA_NameProperty'
+    # initialize a list with NULL's
+    nav_list = [u'NULL'] * INPUT_ARRAY_SIZE
 
-    nav_dict = vs_dict
+    nav_list[0]    = u'com.kikis.get'
+    nav_list[1]    = u'UIA_NameProperty'
+    nav_list[2]    = u'Taskbar'
+    nav_list[3]    = u'UIA_NameProperty'
+    nav_list[4]    = u'Running applications'
+    nav_list[5]    = u'UIA_NameProperty'
+    nav_list[6]    = u'Visual Studio 2017 - 1 running window'
+    nav_list[7]    = u'get'
+    nav_list[8]    = u'UIA_IsKeyboardFocusableProperty'
+
+    #nav_list[8]    = u'UIA_IsEnabledProperty'
+    #nav_list[8]    = u'UIA_IsEnabledProperty'
+    #nav_list[8]    = u'UIA_IsKeyboardFocusableProperty'
+    #nav_list[8]    = u'UIA_HasKeyboardFocusProperty'
+    #nav_list[8]    = u'UIA_NameProperty'
+
+#    print ('----------------------------' )
+#    for x in range(INPUT_ARRAY_SIZE): 
+#        print ( nav_list[x] )
+#
+#    print ('----------------------------' )
+#    print ('calling sys.exit')
+#
+#    sys.exit(0)
 
 #----------------------------------------------------------------------------------
 
-    res = get( args, nav_dict )
+    res = get( args, nav_list )
 
     print('----------------------------')
     print(' get returns res =', res)

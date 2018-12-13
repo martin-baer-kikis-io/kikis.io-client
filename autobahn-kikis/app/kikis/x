@@ -1,16 +1,19 @@
+    # hop to the vim entry
+    vs_dict = {
+        u'0': u'com.kikis.set',
+        u'1': u'UIA_NameProperty',
+        u'2': u'Taskbar',
+        u'3': u'UIA_NameProperty',
+        u'4': u'Running applications',
+        u'5': u'UIA_NameProperty',
+        u'6': u'Visual Studio 2017 - 1 running window',
+        u'7': u'set',
+        u'8': u'UIA_NameProperty'
+    }
+        #u'8': u'UIA_IsEnabledProperty'
+        #u'8': u'UIA_IsEnabledProperty'
+        #u'8': u'UIA_IsKeyboardFocusableProperty'
+        #u'8': u'UIA_HasKeyboardFocusProperty'
+        #u'8': u'UIA_NameProperty'
 
-    #
-    # now actually run a WAMP client using our session class ClientSession
-    #
-
-    runner = ApplicationRunner(url=url, realm=realm, extra=navigation_dict )
-    runner.run(ClientSession, auto_reconnect=True)
-
-    res = runner.extra[u'result']
-
-    print('-------------------------------------------------------------------------------------')
-    print('get result:  ', res )
-    print('-------------------------------------------------------------------------------------')
-
-    return res
-    
+    nav_dict = vs_dict

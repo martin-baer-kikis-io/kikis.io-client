@@ -19,6 +19,9 @@ from autobahn.wamp.types import RegisterOptions
 from autobahn.twisted.wamp import ApplicationSession, ApplicationRunner
 from autobahn.wamp.exception import ApplicationError
 
+import sys
+
+INPUT_ARRAY_SIZE = 16
 
 class ClientSession(ApplicationSession):
     """
@@ -45,21 +48,9 @@ class ClientSession(ApplicationSession):
         self.log.info("Component ID is  {ident}", ident=self._ident)
         self.log.info("Component type is  {type}", type=self._type)
 
-        # convert the navigation dict to the argument list
+        # extra is a dictionary with one key: 'navigation_list'
         extra=self.config.extra
-       
-
-        a = []
-        for key in extra.keys():
-            a.append(extra[key])
-
-        l   = len(a)
-        rem = 16 - l
-
-        for i in range( rem  ):
-            a.append(u'NULL')
-
-        l   = len(a)
+        a = extra['navigation_list']
 
         try:
             #res = yield self.call(u'com.kikis.get', 'wamp::Payload:', 1 )
