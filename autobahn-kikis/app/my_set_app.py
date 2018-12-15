@@ -71,7 +71,6 @@ if __name__ == '__main__':
     nav_list = [u'NULL'] * INPUT_ARRAY_SIZE
 
     nav_list[0]    = u'com.kikis.set'
-    nav_list[0]    = u'com.kikis.get'
     nav_list[1]    = u'UIA_NameProperty'
     nav_list[2]    = u'Taskbar'
     nav_list[3]    = u'UIA_NameProperty'
@@ -79,9 +78,9 @@ if __name__ == '__main__':
     nav_list[5]    = u'UIA_NameProperty'
     nav_list[6]    = u'Visual Studio 2017 - 1 running window'
     nav_list[7]    = u'set'
-    #nav_list[8]    = u'UIA_NameProperty'
+    nav_list[8]    = u'UIA_IsKeyboardFocusableProperty'
 
-    #nav_list[8]    = u'UIA_IsKeyboardFocusableProperty'
+    #nav_list[8]    = u'UIA_NameProperty'
     #nav_list[8]    = u'UIA_IsEnabledProperty'
     #nav_list[8]    = u'UIA_IsEnabledProperty'
     #nav_list[8]    = u'UIA_IsKeyboardFocusableProperty'
