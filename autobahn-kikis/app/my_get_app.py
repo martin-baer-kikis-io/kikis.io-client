@@ -1,113 +1,120 @@
 
 import os
-import sys
-import argparse
-import six
 import txaio
 
-#from kikis.Constants import *
-from kikis.IUIAutomation import get
+#ReactorNotRestartable
+from twisted.internet import defer
+#from kikis.KikisSessionWrapper import KikisSession
+from autobahn.twisted.wamp import ApplicationRunner, ApplicationSession
+from twisted.internet.error import ReactorNotRunning
+from autobahn.wamp.exception import ApplicationError
+from twisted.internet import reactor
 
-INPUT_ARRAY_SIZE = 16
+# simple logging
+import logging
+log = logging.getLogger(__name__)
+logging.basicConfig(level=logging.DEBUG)
+
+
+#from autobahn.twisted.websocket import WebSocketClientProtocol, WebSocketClientFactory
+
+from kikis.getter_setter import get_element_value, rpc_arg_prep
+#from kikis.kikis_thread import  KikisBaseClient
+
+from kikis.KikisSessionWrapper import KikisSession
+from autobahn.twisted.wamp import ApplicationRunner, ApplicationSession
+from twisted.internet.error import ReactorNotRunning
+from twisted.internet import reactor
+
 
 #----------------------------------------------------------------------------------
 
 """
 
-    my_app.py
+    my_get_app.py
 
-        Test application for the get() command
+        Test application for the 'get' command
 
 
 """
-
-#----------------------------------------------------------------------------------
-
-def get_commandline_arguments ( url, realm ):
-
-    # parse command line parameters
-    parser = argparse.ArgumentParser()
-    parser.add_argument ('-d', '--debug',
-                         action='store_true',
-                         help='Enable debug output.')
-
-    parser.add_argument ('--url', dest='url',
-                         type=six.text_type,
-                         default=url,
-                         help='The router URL (default: "ws://masterdns.kikis.local:8080/ws").')
-
-    parser.add_argument ('--realm',
-                         dest='realm',
-                         type=six.text_type,
-                         default=realm,
-                         help='The realm to join (default: "realm1").')
-
-    return parser.parse_args()
-
 
 #----------------------------------------------------------------------------------
 
 if __name__ == '__main__':
 
-#----------------------------------------------------------------------------------
+    log.debug('start' )
 
-    # default values for commandline arguments
-    url   = "ws://masterdns.kikis.local:8080/ws"
-    realm = "realm1"
-    args = get_commandline_arguments ( url, realm )
+    # currently CBURL and CBREALM are set probably by docker
+
+    url   = None
+    realm = None
+
+    rpc_url       = u"com.kikis.get"
+    url         = os.environ.get('CBURL', url )
+    realm       = os.environ.get('CBREALM', realm )
+
+    a             = []
+    extra_d       = { rpc_url : a }
+
+    #log.debug( "realm:  %s", realm)
+    #log.debug( "url:    %s", url )
 
 
-    # start logging
-    if args.debug:
-        txaio.start_logging(level='debug')
-    else:
-        txaio.start_logging(level='info')
+    # define 'vs_path'. This creates a resuable path to a UI element in the
+    # remote Windows host's UI Tree.  Defines a region in the Tree  
 
+    vs_path  = []
+    vs_path.append({ u'UIA_NameProperty' : u'Taskbar' })
+    vs_path.append({ u'UIA_NameProperty' : u'Running applications' })
+    vs_path.append({ u'UIA_NameProperty' : u'Visual Studio 2017 - 1 running window' })
 
-#----------------------------------------------------------------------------------
-
-    # list argument to 'get()'
-
-    # initialize a list with NULL's
-    nav_list = [u'NULL'] * INPUT_ARRAY_SIZE
-
-    nav_list[0]    = u'com.kikis.get'
-    nav_list[1]    = u'UIA_NameProperty'
-    nav_list[2]    = u'Taskbar'
-    nav_list[3]    = u'UIA_NameProperty'
-    nav_list[4]    = u'Running applications'
-    nav_list[5]    = u'UIA_NameProperty'
-    nav_list[6]    = u'Visual Studio 2017 - 1 running window'
-    nav_list[7]    = u'get'
-    nav_list[8]    = u'UIA_IsKeyboardFocusableProperty'
-
-    #nav_list[8]    = u'UIA_IsEnabledProperty'
-    #nav_list[8]    = u'UIA_IsEnabledProperty'
-    #nav_list[8]    = u'UIA_IsKeyboardFocusableProperty'
-    #nav_list[8]    = u'UIA_HasKeyboardFocusProperty'
-    #nav_list[8]    = u'UIA_NameProperty'
-
-#    print ('----------------------------' )
-#    for x in range(INPUT_ARRAY_SIZE): 
-#        print ( nav_list[x] )
-#
-#    print ('----------------------------' )
-#    print ('calling sys.exit')
-#
-#    sys.exit(0)
+    #log.debug('\nvs_path:', vs_path, '\n')
 
 #----------------------------------------------------------------------------------
 
-    res = get( args, nav_list )
+    # make a list to u'get' the 'UIA_NameProperty' at the 'vs_path' location in
+    # the remote Windows UI Tree. 
+    #
+    # format:
+    #
+    #   [u'get' | u'set'], [remote property or value name string ], [path to element] 
+    #
 
-    print('----------------------------')
-    print(' get returns res =', res)
-    print('----------------------------')
-
+    nm = []
+    nm.append({ u'get' : u'UIA_NameProperty' })
+    #nm.append({ u'bet' : u'UIA_NameProperty' })
+    nm.extend( vs_path )
 
 #----------------------------------------------------------------------------------
 
+    # create a second new list with 'get' as first element and append vs_path
+    # to test the generator
 
-print('----------------------------')
-print(u'out of the main block')
-print('----------------------------')
+    fo = []
+    fo.append({ u'get' : u'UIA_HasKeyboardFocusProperty'})
+    fo.extend( vs_path )
+
+#----------------------------------------------------------------------------------
+
+    # call get_element_value() and log the result - twice
+
+    log.debug('>>> calling first time: ')
+    res1 = get_element_value( nm );
+    log.debug('RESULT 1: %s', res1)
+
+    #----------------------------------------------------------------------------------
+
+    #log.debug('>>> calling sectond time: ')
+    #res2 = get_element_value( fo );
+    #log.debug('RESULT 2: %s', res2)
+
+    #----------------------------------------------------------------------------------
+
+    # other test data
+    #ld.append({ u'get' : u'UIA_NameProperty' })
+    #ld.append({ u'get' : u'UIA_TextPatternId' })
+    #ld.append({ u'get' : u'UIA_IsEnabledProperty' })
+    #ld.append({ u'get' : u'UIA_HasKeyboardFocusProperty'})
+    #ld.append({ u'get' : u'UIA_IsKeyboardFocusableProperty' })
+
+#----------------------------------------------------------------------------------

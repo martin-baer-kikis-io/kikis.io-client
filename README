@@ -16,7 +16,7 @@ RUNTIME INSTALLATION.
     The crossbar "logo" should appear along with logging output from the server.
 
 
-2 Start the 'callee' aplicataion on the windows box.
+2 Start the 'callee.exe' aplicataion on the windows box.
 
     Login to the Windows10 host (PW: public99).
 
@@ -100,7 +100,7 @@ RUNTIME INSTALLATION.
 
     The build for VS is started with cmake.  If you want to change the callee build, you
     will need to change the CmakeList file in the directories: 'kikis-cpp' and 'kikis-cpp\SRC'.
-    To creat the 'sin' file for VS, run cmake in the 'kikis-cpp' folder.
+    To create the 'sin' file for VS, run cmake in the 'kikis-cpp' folder.
     
     
         
