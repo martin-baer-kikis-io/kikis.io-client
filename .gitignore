@@ -1,0 +1,14 @@
+
+
+#Linux file types
+
+*.swp
+*.swo
+[jkxyz]
+tmp
+*.tmp
+*.out
+out
+*.log
+log
+junk

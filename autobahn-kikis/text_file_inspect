@@ -1,0 +1,151 @@
+
+g#.append({ u'get' :
+
+
+
+g# = []
+How found:
+g# = []
+	hwnd=0x00000000000100F2 64bit class="MSTaskListWClass" style=0x56000000 ex=0x0
+g# = []
+Name:
+g# = []
+ControlType:
+g# = []
+LocalizedControlType:
+g# = []
+BoundingRectangle:
+g# = []
+IsEnabled:
+g# = []
+IsOffscreen:
+g# = []
+IsKeyboardFocusable:
+g# = []
+HasKeyboardFocus:
+g# = []
+AccessKey:
+g# = []
+ProcessId:
+g# = []
+RuntimeId:
+g# = []
+AutomationId:
+g# = []
+ProviderDescription:
+g# = []
+IsPassword:
+g# = []
+ItemStatus:
+g# = []
+HelpText:
+g# = []
+LegacyIAccessible.ChildId:
+g# = []
+LegacyIAccessible.DefaultAction:
+g# = []
+LegacyIAccessible.Help:
+g# = []
+LegacyIAccessible.KeyboardShortcut:
+g# = []
+LegacyIAccessible.Name:
+g# = []
+LegacyIAccessible.Role:
+g# = []
+LegacyIAccessible.State:
+g# = []
+g# = []
+LegacyIAccessible.Value:
+g# = []
+IsAnnotationPatternAvailable:
+g# = []
+IsDragPatternAvailable:
+g# = []
+IsDockPatternAvailable:
+g# = []
+IsDropTargetPatternAvailable:
+g# = []
+IsExpandCollapsePatternAvailable:
+g# = []
+IsGridItemPatternAvailable:
+g# = []
+IsGridPatternAvailable:
+g# = []
+IsInvokePatternAvailable:
+g# = []
+IsItemContainerPatternAvailable:
+g# = []
+IsLegacyIAccessiblePatternAvailable:
+g# = []
+IsMultipleViewPatternAvailable:
+g# = []
+IsObjectModelPatternAvailable:
+g# = []
+IsRangeValuePatternAvailable:
+g# = []
+IsScrollItemPatternAvailable:
+g# = []
+g# = []
+IsScrollPatternAvailable:
+g# = []
+IsSelectionItemPatternAvailable:
+g# = []
+IsSelectionPatternAvailable:
+g# = []
+IsSpreadsheetItemPatternAvailable:
+g# = []
+IsSpreadsheetPatternAvailable:
+g# = []
+IsStylesPatternAvailable:
+g# = []
+IsSynchronizedInputPatternAvailable:
+g# = []
+IsTableItemPatternAvailable:
+g# = []
+IsTablePatternAvailable:
+g# = []
+IsTextChildPatternAvailable:
+g# = []
+IsTextEditPatternAvailable:
+g# = []
+IsTextPatternAvailable:
+g# = []
+IsTextPattern2Available:
+g# = []
+IsTogglePatternAvailable:
+g# = []
+IsTransformPatternAvailable:
+g# = []
+IsTransform2PatternAvailable:
+g# = []
+IsValuePatternAvailable:
+g# = []
+IsVirtualizedItemPatternAvailable:
+g# = []
+IsWindowPatternAvailable:
+g# = []
+IsCustomNavigationPatternAvailable:
+g# = []
+IsSelectionPattern2Available:
+g# = []
+FirstChild:
+g# = []
+LastChild:
+g# = []
+Next:
+g# = []
+Previous:
+g# = []
+Other Props:
+g# = []
+Children:
+g# = []
+Ancestors:
+g# = []
+	"Taskbar" pane
+g# = []
+	"Desktop 1" pane
+g# = []
+	[ No Parent ]
+g# = []
+ 

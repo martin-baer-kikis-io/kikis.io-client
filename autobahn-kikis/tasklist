@@ -1,0 +1,17 @@
+Tasks as of 10/20/2019
+
+
+1. Use an array to pass hops from client to server, rather than a bunch of single values
+
+2. The current debug output on the server needs clean up.
+
+3. Seperate the debug output from the return value on the server.  Deal with type.
+
+4. Clean up handling the return value from the server on the client. Type again...
+
+5. Allow the client to run an arbitrary serries of get() calls.
+
+    1. make a component that allows client to control the event loop.
+    2. start simple, get rid of run and ApplicationSession on a simpe component
+    3. find an example of start() and leave(); into a design document, not web pages...
+    4. find out why this is so obtuse and poorly documented
