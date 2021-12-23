@@ -21,8 +21,11 @@
 
 #-----------------------------------------------------------
 
-from kikis.getter_setter_03_20 import get_item_value
-#from kikis.getter_setter_03_20 import set_item_value
+#import time
+#from autobahn.twisted.util import sleep
+
+from kikis.getter_setter_03_20 import get_element_value
+from kikis.getter_setter_03_20 import set_element_value
 
 #-----------------------------------------------------------
 
@@ -46,8 +49,6 @@ if __name__ == '__main__':
     path.append({ u'Name' : u'SetTestFile - Notepad' })
     path.append({ u'Name' : u'Text Editor' })
 
-    print(sub, ' defined path: ', path )
-
 #-----------------------------------------------------------
 
     # get and set values in the remote UI Tree. 
@@ -56,34 +57,28 @@ if __name__ == '__main__':
     #
     #   [u'get' | u'set'], [inspect.exe name string ], [path to element] 
     #
-    #     or, maybe better where element is part of tree and item is part of element
-    #
-    #                            element = control
-    #
-    #   [get_item_vauel | set_item_value ], [item_key], [path_to_element | path_to_control] 
-    #   [get_item_key | set_item_key ], [item_val], [path_to_element | path_to_control] 
 
-    #   then get_element_key etc...
-    #
-    #
+    # create get/set stanza for the target element/control
 
-    # Started out using UIA_NameProperty, now trying to use Inspect Labels.
-    # to identify elements and controls.
-
-    key = u'Value.Value'
-    val = u'Text Editor'
-
-    print( ' calling...' )
-    res = get_item_value( key, path )
-    #res = get_item_key( val, path )
+    # How found  - skipping, probably an Inspct artifact...
+    g = []
+    g.append({ u'get' : u'How found' })
+    g.extend( path )
 
 
+    # Name
+
+    g = []
+    #g.append({ u'get' : u'Name' })
+    g.append({ u'get' : u'UIA_NameProperty' })
+    g.extend( path )
+
+    res = get_element_value( g )
     print(sub, ' RESULT: ', res)
 
     print( ' exitiing...' )
     exit()
 
-#-----------------------------------------------------------
 
     # ControlType
     g = []

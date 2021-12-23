@@ -80,7 +80,8 @@ def event_thread (t_arg_d):
     extra    = t_arg_d[u'extra']
 
     runner = ApplicationRunner(url=url, realm=realm, extra=extra )
-    runner.run(KikisSession, auto_reconnect=True)
+    #runner.run(KikisSession, auto_reconnect=True)
+    runner.run(KikisSession, auto_reconnect=False)
     res = runner.extra[u'result']
 
     print(">>> leaving", sub )

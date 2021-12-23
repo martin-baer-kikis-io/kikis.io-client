@@ -28,40 +28,55 @@ INPUT_ARRAY_SIZE = 16
 
 #----------------------------------------------------------------------------------
 
-def rpc_arg_prep (ld):
+def rpc_arg_prep (opp, key, value,  path):
 
     sub = u"rpc_arg_prep"
     print(">>> entered ", sub )
-    #print("\nld:        ", ld, "\n")
+
+    print("\nopp:       ", opp,   "\n")
+    print("key:         ", key,   "\n")
+    print("value:       ", value, "\n")
+    print("path:        ", path,  "\n")
+
+    #if ( opp ==  u"get" ): 
+
 
     a = []
-    for d in ld:
+    a.append(u"operation")
+    a.append(opp)
+    a.append(u"key")
+    a.append(key)
+    a.append(u"value")
+    a.append(value)
+
+    alen = len(a)
+
+    for d in path:
         for key, value in d.items():
             a.append(key)
             a.append(value)
 
-            #print('----------------------------')
-            #print('key: ', key, ' value: ', value)
-            #print('----------------------------')
+            print('----------------------------')
+            print('key: ', key, ' value: ', value)
+            print('----------------------------')
 
 
     alen = len(a)
 
-
-    #print('----------------------------')
-    #print('length of a:', alen )
-    #print('----------------------------')
-
-
+    
+    print('----------------------------')
+    print('length of a:', alen )
+    print('----------------------------')
+    
     add_nulls = INPUT_ARRAY_SIZE - alen
 
     for x in range(add_nulls):
         a.append(u'NULL')
         #a.append(None)
 
-    #print('----------------------------')
-    #print ("a: ", a )
-    #print('----------------------------')
+    print('----------------------------')
+    print ("a: ", a )
+    print('----------------------------')
 
     print (">>> exiting ", sub )
     return a
@@ -79,18 +94,21 @@ def rpc_arg_prep (ld):
 
 #----------------------------------------------------------------------------------
 
-def get_element_value(ld):
+def get_item_value(key, path):
 
-    sub = u"get_element_value"
+    sub = u"get_item_value"
     print(">>> entered ", sub )
 
-    # prep arguments to the 'get' RPC
-    rpc_url = u"com.kikis.get"
-    a       = rpc_arg_prep(ld) 
+    rpc_url = u"com.kikis.get"  # URI to rpc
+    value   = u'NULL'           # value is a NULL string in get opperation
+
+    # prep arguments to the 'get' RPC opperation
+    msg = rpc_arg_prep(u"get", key, value,  path)    # formats the msg
+    print("msg: ", msg )
 
 
     print(">>> ", sub, " calling remote_event()" )
-    res = remote_event( rpc_url, a )
+    res = remote_event( rpc_url, msg )
 
     #print ( ">>> ", sub, "returning the result", res )
     print(">>> exiting ", sub )
@@ -109,14 +127,14 @@ def get_element_value(ld):
 
 #----------------------------------------------------------------------------------
 
-def set_element_value(ld):
+def set_element_value(key, path):
 
     sub = u"set_element_value"
     print(">>> entered ", sub )
 
     # prep arguments to the 'set' RPC
     rpc_url = u"com.kikis.set"
-    a       = rpc_arg_prep(ld) 
+    a       = rpc_arg_prep(u"set", key, path) 
 
 
     print(">>> ", sub, " calling remote_event()" )

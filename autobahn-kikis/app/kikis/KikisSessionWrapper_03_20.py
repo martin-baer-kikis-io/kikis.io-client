@@ -59,9 +59,11 @@ class KikisSession(ApplicationSession):
         a = extra[rpc_url] # navigation hop dictionary
         alen = len(a)
 
-        #print('----------------------------')
-        #print('length of a:', alen )
-        #print('----------------------------')
+        print('----------------------------')
+        print('length of a:', alen )
+        print('----------------------------')
+
+        #exit()
 
         add_nulls = INPUT_ARRAY_SIZE - alen
         for x in range(add_nulls):
@@ -70,9 +72,7 @@ class KikisSession(ApplicationSession):
         
  
         try:
-            res = yield self.call ( rpc_url,  a[0],  a[1],  a[2],  a[3],  a[4],  a[5],   \
-                                              a[6],  a[7],  a[8],  a[9],  a[10], a[11], \
-                                              a[12], a[13], a[14], a[15], u'NULL' )
+            res = yield self.call ( rpc_url,  a[0],  a[1],  a[2],  a[3],  a[4],  a[5], a[6], a[7], a[8], a[9], a[10], a[11], a[12], a[13], a[14], a[15], u'NULL' )
 
             self.config.extra[u'result'] = res
 
