@@ -99,12 +99,11 @@ class KikisSession(ApplicationSession):
 
         print('>>> entered onDisconnect')
         self.log.info("Router connection closed")
-        print('>>> try block to stop reactor')
+        ##print('>>> try block to stop reactor')
         try:
             print('>>> stop reactor')
             reactor.stop()
         except ReactorNotRunning:
             print('>>> reactor not running exception')
             pass
-
 
