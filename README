@@ -16,17 +16,17 @@ RUNTIME INSTALLATION.
     The crossbar "logo" should appear along with logging output from the server.
 
 
-2 Start the 'callee.exe' aplicataion on the windows box.
+2 Start the 'kikis.exe' aplicataion on the windows box.
 
-    Login to the Windows10 host (PW: public99).
+    Login to the Windows10 host
 
     Open a Developer's command prompt
 
         Run: DevSetup.bat - this may not really be needed...
 
-    Change directory to Documents\kikis-cpp\SRC\Release
+    Change directory to Documents\kikis-cpp\SRC\Debug
 
-        Type: callee.exe
+        Type: kikis.exe
 
 
 3 Run the autobahn-kikis application; back to the linux host
@@ -44,7 +44,7 @@ RUNTIME INSTALLATION.
 
     Change directory to the autobahn-kikis directory.
 
-        Type:  make run
+        Type:  make start
 
     That will run the Python script in the 'apps/run' file
 
@@ -61,9 +61,6 @@ RUNTIME INSTALLATION.
     There is no build instructions to the Caller, since these are Python apps that are
     interpreted at runtime.  The Python code for the user apps, can be found in the 'apps'
     and 'apps/kikis' directories.
-
-    There are some other autobahn Python files somewhere, not sure where at this point.
-
 
 
 2 Building the Callee
