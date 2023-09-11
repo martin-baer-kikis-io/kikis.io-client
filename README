@@ -22,7 +22,7 @@ RUNTIME INSTALLATION.
 
     Open a Developer's command prompt
 
-    Change directory to Documents\kikis-cpp\SRC\Debug
+    Change directory to <repo base>\kikis-cpp\SRC\Debug
 
         Type: kikis.exe
 
@@ -33,12 +33,12 @@ RUNTIME INSTALLATION.
     The Python scripts use crossbar and autobahn (on the windows host)  to access
     and manipulate the remote Windows OS user interface.
 
-    Change directory to autobahn-kikis.  This directory will be used
+    Change directory to <repo base>/autobahn-kikis.  This directory will be used
     to run Python RPA scripts.  The Python code will be in the "app"
     subdirectory.
 
 
-4 Run the 'caller' on the Linux box; this will run the Python scripts found in 'app'.
+4 Run the 'kikis client' on the Linux box; this will run the Python scripts found in 'app'.
 
     Change directory to the autobahn-kikis directory.
 
@@ -50,24 +50,24 @@ RUNTIME INSTALLATION.
 
 
 
-                   Building the Caller and Callee
+                   Building the kikis Client and Server
 
 
 1 Buillding the Caller
 
-    The Caller is the Linux/Python side of the design.  The caller calls the callee.
-    There is no build instructions to the Caller, since these are Python apps that are
+    The client is the Linux/Python side of the design.  The client calls the server.
+    There is no build instructions to the client, since these are Python apps that are
     interpreted at runtime.  The Python code for the user apps, can be found in the 'apps'
     and 'apps/kikis' directories.
 
 
-2 Building the Callee
+2 Building the Server
 
-    The callee is the C++ code on the windows host.  It provides a set of remote proceedures
-    and registers them with crossbar so that the caller can use them to make remote proceedure
+    The Server is the C++ code on the windows host.  It provides a set of remote proceedures
+    and registers them with crossbar so that the client can use them to make remote proceedure
     calls.
 
-    The build environment uses VisualStudio2017 without much alteration.  The code relies on
+    The build environment uses VisualStudio2019 without much alteration.  The code relies on
     third-party software, including:
         
         autobahn 
@@ -91,11 +91,11 @@ RUNTIME INSTALLATION.
  
 
     
-3 Changing the Callee Build
+3 Changing the Server Build
 
-    The build for VS is started with cmake.  If you want to change the callee build, you
+    The build for VS is started with cmake.  If you want to change the server build, you
     will need to change the CmakeList file in the directories: 'kikis-cpp' and 'kikis-cpp\SRC'.
-    To create the 'sin' file for VS, run cmake in the 'kikis-cpp' folder.
+    To create the 'sin' file for VS, run cmake in the 'kikis-cpp/SRC' folder.
     
     
         
