@@ -22,8 +22,6 @@ RUNTIME INSTALLATION.
 
     Open a Developer's command prompt
 
-        Run: DevSetup.bat - this may not really be needed...
-
     Change directory to Documents\kikis-cpp\SRC\Debug
 
         Type: kikis.exe
